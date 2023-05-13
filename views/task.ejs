@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../css/task.css">
+    <title>Edit Task</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="taskManagement">
+                <div class="row-1"><h2>Edit task</h2></div>
+                <div class="row">
+                    <div>Task id</div>
+                    <div class="id"><%= singleTask.id%></div>
+                 </div>
+                 <div class="row">
+                    <div>Name</div>
+                    <input value="<%= singleTask.name %>" class="nameInput" type="text">
+                 </div>
+                 <div class="row">
+                    <div>Completed</div>
+                    <input class="checkInput" type="checkbox">
+                 </div>
+                 <div class="row-1"><button class="submitBtn" type="submit">Edit task</button></div>
+
+            </div>
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./../../js/update-task.js"></script>
+    <script>
+        <% if(singleTask.completed === true){%>
+        checkInput.checked = true;
+        <%}%>
+    </script>
+</body>
+</html>
